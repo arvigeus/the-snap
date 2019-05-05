@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import Loading from "components/Loading";
+import Gallery from "components/Gallery";
+
+import GlobalStyle from "./GlobalStyle";
+import getData from "./data";
 
 const App: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [data, setData] = useState<Array<Person>>([]);
+
+  if (loading) {
+    getData().then(result => {
+      setLoading(false);
+      setData(result);
+    });
+    return (
+      <>
+        <GlobalStyle />
+        <Loading />
+      </>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Gallery data={data} />
+    </>
   );
-}
+};
 
 export default App;
