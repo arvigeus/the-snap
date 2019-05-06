@@ -5,10 +5,8 @@ import ReactGA from "react-ga";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-console.log(process.env);
-
 // @ts-ignore
-ReactGA.initialize(process.env.GA);
+ReactGA.initialize(process.env.REACT_APP_GA);
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(<App />, document.getElementById("root"));
