@@ -28,6 +28,8 @@ const desintegrate = async (target: HTMLElement) => {
     frame.style.transition = "transform 1s ease-out, opacity 1s ease-out";
     frame.style.opacity = "1";
     frame.style.transform = "rotate(0deg) translate(0px, 0px) rotate(0deg)";
+    // @ts-ignore
+    frame.style.willChange = "transform, opacity";
     container.appendChild(frame);
   });
 
@@ -63,7 +65,7 @@ const desintegrate = async (target: HTMLElement) => {
  */
 function generateFrames(
   canvas: HTMLCanvasElement,
-  count = 128
+  count = 32
 ): Array<HTMLCanvasElement> | null {
   const { width, height } = canvas;
   const ctx = canvas.getContext("2d");
