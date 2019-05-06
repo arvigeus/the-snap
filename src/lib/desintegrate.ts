@@ -2,54 +2,57 @@ import html2canvas from "html2canvas";
 
 /* eslint-disable no-param-reassign */
 
-const desintegrate = (target: HTMLElement) => {
+const desintegrate = async (target: HTMLElement) => {
   const parent = target.parentNode;
   // @ts-ignore
   parent.style.pointerEvents = "none";
   if (!parent) return;
-  html2canvas(target).then((canvas: HTMLCanvasElement) => {
-    canvas.style.width = `${target.offsetWidth}px`;
-    canvas.style.height = `${target.offsetHeight}px`;
 
-    const container = document.createElement("div");
-
-    // setup the frames for animation
-    const frames = generateFrames(canvas);
-    if (!frames) return;
-    frames.forEach((frame, i) => {
-      frame.style.transitionDelay = `${(1.35 * i) / frames.length}s`;
-      frame.style.position = "absolute";
-      frame.style.left = "0";
-      frame.style.top = "0";
-      frame.style.transition = "transform 1s ease-out, opacity 1s ease-out";
-      frame.style.opacity = "1";
-      frame.style.transform = "rotate(0deg) translate(0px, 0px) rotate(0deg)";
-      container.appendChild(frame);
-    });
-
-    target.style.opacity = "0";
-    container.style.position = "absolute";
-    container.style.top = "20px";
-    container.style.pointerEvents = "none";
-    parent.appendChild(container);
-
-    // eslint-disable-next-line no-unused-expressions
-    container.offsetLeft; // forces reflow, so CSS we apply below does transition
-    // set the values the frame should animate to
-    // note that this is done after reflow so the transitions trigger
-    frames.forEach(frame => {
-      const randomRadian = 2 * Math.PI * (Math.random() - 0.5);
-      frame.style.transform = `rotate(${15 *
-        (Math.random() - 0.5)}deg) translate(${60 *
-        Math.cos(randomRadian)}px, ${30 *
-        Math.sin(randomRadian)}px) rotate(${15 * (Math.random() - 0.5)}deg)`;
-      frame.style.opacity = "0";
-    });
-
-    setTimeout(() => {
-      parent.removeChild(container);
-    }, 2000);
+  const canvas: HTMLCanvasElement = await html2canvas(target, {
+    logging: process.env.NODE_ENV !== "production"
   });
+
+  canvas.style.width = `${target.offsetWidth}px`;
+  canvas.style.height = `${target.offsetHeight}px`;
+
+  const container = document.createElement("div");
+
+  // setup the frames for animation
+  const frames = generateFrames(canvas);
+  if (!frames) return;
+  frames.forEach((frame, i) => {
+    frame.style.transitionDelay = `${(1.35 * i) / frames.length}s`;
+    frame.style.position = "absolute";
+    frame.style.left = "0";
+    frame.style.top = "0";
+    frame.style.transition = "transform 1s ease-out, opacity 1s ease-out";
+    frame.style.opacity = "1";
+    frame.style.transform = "rotate(0deg) translate(0px, 0px) rotate(0deg)";
+    container.appendChild(frame);
+  });
+
+  target.style.opacity = "0";
+  container.style.position = "absolute";
+  container.style.top = "20px";
+  container.style.pointerEvents = "none";
+  parent.appendChild(container);
+
+  // eslint-disable-next-line no-unused-expressions
+  container.offsetLeft; // forces reflow, so CSS we apply below does transition
+  // set the values the frame should animate to
+  // note that this is done after reflow so the transitions trigger
+  frames.forEach(frame => {
+    const randomRadian = 2 * Math.PI * (Math.random() - 0.5);
+    frame.style.transform = `rotate(${15 *
+      (Math.random() - 0.5)}deg) translate(${60 *
+      Math.cos(randomRadian)}px, ${30 * Math.sin(randomRadian)}px) rotate(${15 *
+      (Math.random() - 0.5)}deg)`;
+    frame.style.opacity = "0";
+  });
+
+  setTimeout(() => {
+    parent.removeChild(container);
+  }, 2000);
 };
 
 /**
