@@ -26,7 +26,7 @@ const Gallery: React.SFC<GalleryProps> = ({ data }) => {
         <br />
         Snap all the people who disappeared during the decimation.
         <br />
-        There is only one way for the «Avengers» to win!
+        There is only one possible future where the «Avengers» can win!
       </Heading>
       <Wrapper>
         {data.map(({ alias, name, actor, image, rotation, line, snapped }) => {
