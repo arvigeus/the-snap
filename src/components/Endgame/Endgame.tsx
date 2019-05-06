@@ -25,8 +25,8 @@ const Endgame: React.FC<EndgameProps> = ({ snapped }) => {
     : "Perfectly balanced, as all things should be";
 
   const message = won
-    ? "This is the one single alternate reality that Doctor Strange saw the Avengers winning. Congratulations!"
-    : "This is one of the 14,000,604 alternate realities where the Avengers lost the war. Thanos won.";
+    ? "This is the one and only outcome that Doctor Strange saw the Avengers winning. Congratulations!"
+    : "This is one of the 14,000,604 alternate outcomes where the Avengers lost the war. Thanos won.";
 
   const src = won ? avengers : thanos;
 
