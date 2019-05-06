@@ -88,6 +88,7 @@ const Heading = styled.h1`
 
 const Wrapper = styled.div`
   display: flex;
+  overflow: hidden;
   flex-flow: row wrap;
   align-items: top;
   justify-content: center;
