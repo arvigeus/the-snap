@@ -36,10 +36,10 @@ const style = css<TextProps>`
   color: ${({ color }) => color || colors.black};
   font-family: ${({ fontFamily }) => fontFamily || fonts.interface};
   font-size: ${({ fontSize }) => fontSize || fontSizes.normal};
-  font-style: ${({ fontStyle }) => fontStyle || "normal"};
-  font-weight: ${({ fontWeight }) => fontWeight || "normal"};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-style: ${({ fontStyle }) => fontStyle || "normal"};
+  font-weight: ${({ fontWeight }) => fontWeight || "normal"};
 `;
 
 const Text = styled.span<StyledTextProps>`

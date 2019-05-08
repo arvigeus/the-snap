@@ -103,11 +103,24 @@ const Item = styled.div`
 `;
 
 const speackLineAnimation = keyframes`
-  0%   {opacity: 0; transform: scale(0.85);}
-  15%  {transform: scale(1);}
-  25%  {opacity: 1;}
-  50%  {opacity: 1; transform: scale(1);}
-  100% {opacity: 0;transform: scale(0.97);}
+  0%   {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  15%  {
+    transform: scale(1);
+  }
+  25%  {
+    opacity: 1;
+  }
+  50%  {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
 `;
 
 const SpeakLine = styled.div`

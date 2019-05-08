@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components/macro";
 
 import avengers from "./avengers.jpg";
 import thanos from "./thanos.jpg";
@@ -87,9 +87,9 @@ const Small = styled.small`
 
 const Github = styled.a`
   position: absolute;
+  z-index: 100;
   right: 20px;
   bottom: 20px;
-  z-index: 100;
 `;
 
 export default Endgame;
