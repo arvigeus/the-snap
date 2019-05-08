@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "thanos",
+  "name": "the-snap",
   "builds": [
     {
       "src": "package.json",
