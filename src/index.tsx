@@ -5,9 +5,14 @@ import ReactGA from "react-ga";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-// @ts-ignore
-ReactGA.initialize(process.env.REACT_APP_GA);
-ReactGA.pageview(window.location.pathname + window.location.search);
+if (process.env.NODE_ENV !== "production") {
+  const axe = require("react-axe");
+  axe(React, ReactDOM, 1000);
+} else {
+  // @ts-ignore
+  ReactGA.initialize(process.env.REACT_APP_GA);
+  ReactGA.pageview(window.location.pathname + window.location.search);
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

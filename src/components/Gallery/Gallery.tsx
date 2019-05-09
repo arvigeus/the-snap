@@ -86,7 +86,7 @@ const Heading = styled.h1`
   text-align: center;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: flex;
   overflow: hidden;
   flex-flow: row wrap;
@@ -132,13 +132,11 @@ const SpeakLine = styled.div`
   background: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
   color: #dc143c;
-  font-size: 4vw;
+  font-size: calc(12px + 4vw);
   font-weight: 900;
   opacity: 0;
   pointer-events: none;
   text-align: center;
-  text-shadow: -1px -1px 1px #dc143c, 1px -1px 1px #dc143c, -1px 1px 1px #dc143c,
-    1px 1px 1px #dc143c;
 `;
 
 const Counter = styled.div`
