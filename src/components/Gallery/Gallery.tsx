@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styled, { keyframes } from "styled-components/macro";
 
+import GithubLogo from "components/GithubLogo";
 import Picture from "components/Picture";
 import { HandwrittenText } from "components/Text";
 import Endgame from "components/Endgame";
@@ -21,6 +22,10 @@ const Gallery: React.SFC<GalleryProps> = ({ data }) => {
 
   return (
     <>
+      <GithubLogo
+        link="https://github.com/arvigeus/the-snap"
+        color={remaining > 0 ? "#8891a4" : "#fff"}
+      />
       <Heading>
         Unleash your inner Thanos!
         <br />

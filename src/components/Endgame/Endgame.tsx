@@ -3,7 +3,6 @@ import styled, { keyframes } from "styled-components/macro";
 
 import avengers from "./avengers.jpg";
 import thanos from "./thanos.jpg";
-import github from "./github.png";
 
 interface EndgameProps {
   snapped: object;
@@ -43,9 +42,6 @@ const Endgame: React.FC<EndgameProps> = ({ snapped }) => {
         alt="Endgame"
         style={{ maxWidth: "80%", maxHeight: "680px" }}
       />
-      <Github href="https://github.com/arvigeus/thanos" target="_blank">
-        <img src={github} alt="Github" />
-      </Github>
     </Wrapper>
   );
 };
@@ -83,13 +79,6 @@ const Small = styled.small`
   display: block;
   font-size: 18px;
   font-style: italic;
-`;
-
-const Github = styled.a`
-  position: absolute;
-  z-index: 100;
-  right: 20px;
-  bottom: 20px;
 `;
 
 export default Endgame;
