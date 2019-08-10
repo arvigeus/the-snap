@@ -16,15 +16,16 @@
       "preLaunchTask": "npm: start"
     },
     {
-      "name": "Documentation",
+      "name": "Chrome (Attach)",
       "type": "chrome",
-      "request": "launch",
+      "request": "attach",
+      "port": 9222,
       "url": "http://localhost:3000",
       "webRoot": "${workspaceRoot}/src",
       "sourceMapPathOverrides": {
         "webpack:///src/*": "${webRoot}/*"
       },
-      "preLaunchTask": "npm: docz:dev"
+      "preLaunchTask": "npm: start"
     },
     {
       "name": "Debug CRA Tests",
