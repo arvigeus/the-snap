@@ -140,7 +140,7 @@ const cast = shuffleArray([
     alias: "",
     name: "Lila Barton",
     actor: "Ava Russo",
-    image: require("./Lila_Barton_AE.jpg"),
+    image: require("./Lila_Barton.jpg"),
     line: "Daddy?",
     snapped: true
   },
@@ -157,7 +157,7 @@ const cast = shuffleArray([
     name: "Steve Rogers",
     actor: "Chris Evans",
     image: require("./CapAmerica-EndgameProfile.jpg"),
-    line: "We don't trade lives",
+    line: "I can do this all day!",
     snapped: false
   },
   {
