@@ -137,7 +137,7 @@ const SpeakLine = styled.div`
   background: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
   color: #dc143c;
-  font-size: calc(12px + 4vw);
+  font-size: 3.2rem;
   font-weight: 900;
   opacity: 0;
   pointer-events: none;
