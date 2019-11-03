@@ -12,7 +12,7 @@
     "@types/react-helmet": "^5.0.9",
     "@types/styled-components": "^4.1.19",
     "html2canvas": "^1.0.0-rc.3",
-    "react": "^16.9.0",
+    "react": "^16.11.0",
     "react-dom": "^16.10.2",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
