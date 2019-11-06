@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components/macro";
+import styled, { css, keyframes } from "styled-components/macro";
 
 type GithubLogoProps = {
   link: string;
@@ -64,13 +64,13 @@ type OctoProps = {
   background?: string;
 };
 
-const Octo = styled.svg<OctoProps>`
+const Octo = styled.svg<OctoProps>(({color, background}) => css`
   position: absolute;
   top: 0;
   right: 0;
   border: 0;
-  color: ${({ color }) => color};
-  fill: ${({ background }) => background};
+  color: ${color};
+  fill: ${background};
   transition-delay: 1s;
   transition-duration: 1s;
   transition-property: color, fill;
@@ -85,7 +85,7 @@ const Octo = styled.svg<OctoProps>`
       animation: none;
     }
   }
-`;
+`);
 
 const Corner = styled.a`
   position: fixed;

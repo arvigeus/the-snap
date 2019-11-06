@@ -36,13 +36,13 @@ const imgStyle = css`
   box-shadow: 2px 2px 2px 0 #e7e8e8 inset, -2px -2px 2px 0 #e7e8e8 inset;
 `;
 
-const Photo = styled.div<PictureProps>`
+const Photo = styled.div<PictureProps>(({src}) => css`
   padding-bottom: 129%;
-  background-image: url('${({ src }) => src}');
+  background-image: url('${src}');
   background-position: center;
   background-size: cover;
   border-radius: 2px;
   ${imgStyle};
-`;
+`);
 
 export default React.memo(Picture);

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import styled, { keyframes } from "styled-components/macro";
+import styled, { css, keyframes } from "styled-components/macro";
 
 import GithubLogo from "components/GithubLogo";
 import Picture from "components/Picture";
@@ -99,13 +99,13 @@ const Wrapper = styled.main`
   justify-content: center;
 `;
 
-const Item = styled.div`
+const Item = styled.div(({angle}: {angle: number}) => css`
   width: 380px;
   box-sizing: border-box;
   padding: 20px;
   cursor: url('${cursor}'), auto;
-  transform: ${({ angle }: { angle: number }) => `rotate(${angle}deg)`};
-`;
+  transform: rotate${angle}deg;
+`);
 
 const speackLineAnimation = keyframes`
   0%   {
