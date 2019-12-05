@@ -39,7 +39,7 @@ const desintegrate = async (target: HTMLElement) => {
   container.style.pointerEvents = "none";
   parent.appendChild(container);
 
-  // eslint-disable-next-line no-unused-expressions
+  // eslint-disable-next-line no-unused-expressions, chai-friendly/no-unused-expressions, @typescript-eslint/no-unused-expressions
   container.offsetLeft; // forces reflow, so CSS we apply below does transition
   // set the values the frame should animate to
   // note that this is done after reflow so the transitions trigger
